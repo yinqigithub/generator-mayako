@@ -15,7 +15,17 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  color: #42b983;
-}
+  :root {
+    --mainColor: red;
+    --danger-theme: {
+      color: white;
+      border:1px solid sienna;
+    };
+  }
+  a{
+    color: var(--mainColor);
+  }
+  span {
+    @apply --danger-theme;
+  }
 </style>

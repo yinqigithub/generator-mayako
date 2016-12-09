@@ -65,7 +65,9 @@ module.exports = generators.Base.extend({
             this.copy('config/prod.env.js', 'config/prod.env.js');
             this.copy('src/main.js', 'src/main.js');
             this.copy('src/components/Hello.vue', 'src/components/Hello.vue');
+            this.copy('src/main.vue', 'src/main.vue');
             this.copy('src/assets/i/favicon.png', 'src/assets/i/favicon.png');
+            this.copy('src/assets/css/app.css', 'src/assets/css/app.css');
             this.copy('src/assets/i/app-icon72x72@2x.png', 'src/assets/i/app-icon72x72@2x.png');
             this.copy('static/css/app.css', 'static/css/app.css');
             this.copy('index.html', 'index.html');
@@ -73,7 +75,6 @@ module.exports = generators.Base.extend({
             this.copy('.editorconfig', '.editorconfig');
             this.copy('.eslintignore', '.eslintignore');
             this.copy('.eslintrc.js', '.eslintrc.js');
-            this.copy('.gitignore', '.gitignore');
             this.copy('README.md', 'README.md');
 
         }

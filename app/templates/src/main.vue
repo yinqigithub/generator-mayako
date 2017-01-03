@@ -1,6 +1,6 @@
 <template>
   <div id="">
-    <el-input-number v-model="num1"></el-input-number>
+    <input v-model="num1"/>
     <h1>Hello App!</h1>
 
     <p>
@@ -17,6 +17,7 @@
       }
     }
   }
+
 </script>
 
 <style>

@@ -74,7 +74,7 @@ module.exports = generators.Base.extend({
             this.copy('.babelrc', '.babelrc');
             this.copy('.editorconfig', '.editorconfig');
             this.copy('.eslintignore', '.eslintignore');
-            this.copy('.gitignore', '.gitignore');
+            this.copy('_.gitignore', '.gitignore');
             this.copy('.eslintrc.js', '.eslintrc.js');
             this.copy('README.md', 'README.md');
 

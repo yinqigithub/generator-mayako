@@ -1,10 +1,8 @@
 import Vue from 'vue'
 import Main from './main.vue'
-import Hello from './components/Hello.vue'
+const Hello = resolve => require(['./components/Hello.vue'], resolve);
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap/dist/js/bootstrap.js'
 //引入组件并使用2个模块
 Vue.use(VueRouter)
 Vue.use(VueResource)

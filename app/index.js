@@ -57,6 +57,7 @@ module.exports = generators.Base.extend({
             this.copy('build/dev-client.js', 'build/dev-client.js');
             this.copy('build/dev-server.js', 'build/dev-server.js');
             this.copy('build/utils.js', 'build/utils.js');
+            this.copy('build/vue-loader.conf.js', 'build/vue-loader.conf.js');
             this.copy('build/webpack.base.conf.js', 'build/webpack.base.conf.js');
             this.copy('build/webpack.dev.conf.js', 'build/webpack.dev.conf.js');
             this.copy('build/webpack.prod.conf.js', 'build/webpack.prod.conf.js');
@@ -83,7 +84,7 @@ module.exports = generators.Base.extend({
 
     install: function () {
         var done = this.async();
-        this.spawnCommand('npm', ['install'])  //安装项目依赖
+        this.spawnCommand('cnpm', ['install'])  //安装项目依赖
             .on('exit', function (code) {
                 if (code) {
                     done(new Error('code:' + code));

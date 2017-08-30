@@ -28,6 +28,7 @@
     "magic-check": "^1.0.3",
     "may-vue-alert": "^1.0.0",
     "may-vue-loading": "^1.0.0",
+    "muiv3": "^3.3.0",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
     "opn": "^4.0.2",

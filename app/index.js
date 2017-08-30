@@ -82,32 +82,18 @@ module.exports = generators.Base.extend({
             	this.copy('v2/README.md', 'README.md');
         	}else{
         		this.template('v1/_package.json', 'package.json');  //
-            this.copy('v1/build/build.js', 'build/build.js');
-            this.copy('v1/build/check-versions.js', 'build/check-versions.js');
-            this.copy('v1/build/dev-client.js', 'build/dev-client.js');
-            this.copy('v1/build/dev-server.js', 'build/dev-server.js');
-            this.copy('v1/build/utils.js', 'build/utils.js');
-            this.copy('v1/build/vue-loader.conf.js', 'build/vue-loader.conf.js');
-            this.copy('v1/build/webpack.base.conf.js', 'build/webpack.base.conf.js');
-            this.copy('v1/build/webpack.dev.conf.js', 'build/webpack.dev.conf.js');
-            this.copy('v1/build/webpack.prod.conf.js', 'build/webpack.prod.conf.js');
-            this.copy('v1/config/dev.env.js', 'config/dev.env.js');
-            this.copy('v1/config/index.js', 'config/index.js');
-            this.copy('v1/config/prod.env.js', 'config/prod.env.js');
-            this.copy('v1/src/main.js', 'src/main.js');
-            this.copy('v1/src/components/Hello.vue', 'src/components/Hello.vue');
-            this.copy('v1/src/main.vue', 'src/main.vue');
-            this.copy('v1/src/assets/i/favicon.png', 'src/assets/i/favicon.png');
-            this.copy('v1/src/assets/css/app.css', 'src/assets/css/app.css');
-            this.copy('v1/src/assets/i/app-icon72x72@2x.png', 'src/assets/i/app-icon72x72@2x.png');
-            this.copy('v1/static/css/app.css', 'static/css/app.css');
-            this.copy('v1/index.html', 'index.html');
+            const sourceDir = path.join('./templates/v1', '/');
+      			const filePaths = utils.read(sourceDir);
+      			filePaths.forEach((i)=>{
+      				if(i!='_package.json'&&i!='_.gitignore')
+      				this.copy('v1/' + i,'/'+i)
+      			})
             this.copy('v1/.babelrc', '.babelrc');
             this.copy('v1/.editorconfig', '.editorconfig');
             this.copy('v1/.eslintignore', '.eslintignore');
             this.copy('v1/_.gitignore', '.gitignore');
             this.copy('v1/.eslintrc.js', '.eslintrc.js');
-            this.copy('v1/README.md', 'README.md');
+           
         	}
         	//默认源目录就是生成器的templates目录，目标目录就是执行`yo example`时所处的目录。调用this.template用Underscore模板语法去填充模板文件
         }

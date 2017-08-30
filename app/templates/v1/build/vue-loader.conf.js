@@ -16,8 +16,9 @@ module.exports = {
     })
   }),
   postcss: [
-    require('autoprefixer')({
-      browsers: ['last 2 versions']
-    }),require('postcss-cssnext')()
+    require('postcss-cssnext')()
   ]
+//require('autoprefixer')({
+//    browsers: ['last 2 versions']
+//  }),
 }

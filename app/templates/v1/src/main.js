@@ -3,6 +3,9 @@ import Main from './main.vue'
 const Hello = resolve => require(['./components/Hello.vue'], resolve);
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
+import 'muiv3/dist/js/mui.js'
+import '../static/css/mui.min.css'
+import '../static/css/iconfont.css'
 //引入组件并使用2个模块
 Vue.use(VueRouter)
 Vue.use(VueResource)

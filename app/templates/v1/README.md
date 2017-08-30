@@ -1,18 +1,25 @@
-# ygdl
+# mayakocli
 
-> mayako
+> mayako-cliV2 
 
-## Build Setup
+## npm 相关命令
 
 ``` bash
-# install dependencies
+# 安装工程依赖
 npm install
 
-# serve with hot reload at localhost:8080
+# 更新工程依赖
+npm update
+
+# 在 localhost:8082 上启动带有热更新机制的开发服务器
 npm run dev
 
-# build for production with minification
-npm run build
-```
+# 检查您的代码是否规范
+npm run lint
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+# 构建线上生产环境产物
+npm run build
+
+# 构建线上生产环境产物并且查看构建分析报告
+npm run build --report
+```

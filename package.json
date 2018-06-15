@@ -1,6 +1,6 @@
 {
   "name": "generator-mayako",
-  "version": "0.9.9",
+  "version": "0.9.10",
   "description": "基于vue的生成器",
   "files": [        "app"
   ],

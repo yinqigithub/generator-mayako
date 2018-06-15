@@ -107,7 +107,7 @@ module.exports = generators.Base.extend({
 						this.copy('v3/' + i, '/' + i)
 				})
 				this.copy('v3/.editorconfig', '.editorconfig');
-				this.copy('v3/balel.config.js', 'balel.config.js');
+				this.copy('v3/babel.config.js', 'babel.config.js');
 				this.copy('v3/vue.config.js', 'vue.config.js');
 				this.copy('v3/READMECN.md', 'READMECN.md');
 				this.copy('v3/.postcssrc.js', '.postcssrc.js');

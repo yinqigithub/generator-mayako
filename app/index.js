@@ -128,13 +128,20 @@ module.exports = generators.Base.extend({
 
 	install: function () {
 		var done = this.async();
+		var that = this;
 		console.log('构建完成准备安装');
-		this.spawnCommand(this.installType, ['install']) //安装项目依赖
+		this.spawnCommand(this.installType,['install','rename-files','-g']) 
 			.on('exit', function (code) {
 				if (code) {
 					done(new Error('code:' + code));
 				} else {
-					done();
+					that.spawnCommand(that.installType, ['install']).on('exit',function(code){
+						if(code){
+							done(new Error('code:' + code));
+						}else{
+							done()
+						}
+					})
 				}
 			})
 			.on('error', done);

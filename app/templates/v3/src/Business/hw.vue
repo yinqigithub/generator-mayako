@@ -33,7 +33,6 @@ export default {
     mounted: function() {
         this.$nextTick(function() {
             if (this.dataPromise) {
-                console.log('client')
             }
             // Code that will run only after the
             // entire view has been rendered

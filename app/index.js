@@ -19,6 +19,7 @@ module.exports = generators.Base.extend({
 		this.name = path.basename(process.cwd());
 		this.description = '';
 		this.author = '';
+		this.installType = 'npm';
 		this.mode = 1;
 		var prompts = [{
 				type: 'input',
@@ -43,6 +44,12 @@ module.exports = generators.Base.extend({
 				name: 'mode',
 				message: 'Select a template type:',
 				choices: ['Vue&&Mui', 'Vue&&Mui&&PWA', 'Vue&&SSR']
+			},
+			{
+				type: 'list',
+				name: 'type',
+				message: 'Select a install type:',
+				choices: ['npm', 'cnpm']
 			}
 
 		];
@@ -55,7 +62,7 @@ module.exports = generators.Base.extend({
 			this.author = props.author;
 			this.description = props.description;
 			this.mode = props.mode;
-
+			this.installType = props.type;
 			done(); //进入下一个生命周期阶段
 		}.bind(this));
 	},
@@ -112,6 +119,7 @@ module.exports = generators.Base.extend({
 				this.copy('v3/READMECN.md', 'READMECN.md');
 				this.copy('v3/.postcssrc.js', '.postcssrc.js');
 				this.copy('v3/.eslintrc.js', '.eslintrc.js');
+				this.copy('v3/server.js', 'server.js');
 				this.copy('v3/README.md', 'README.md');
 			}
 			//默认源目录就是生成器的templates目录，目标目录就是执行`yo example`时所处的目录。调用this.template用Underscore模板语法去填充模板文件
@@ -120,8 +128,8 @@ module.exports = generators.Base.extend({
 
 	install: function () {
 		var done = this.async();
-		console.log('构建完成准备安装，因网络原因默认采用cnpm安装');
-		this.spawnCommand('cnpm', ['install']) //安装项目依赖
+		console.log('构建完成准备安装');
+		this.spawnCommand(this.installType, ['install']) //安装项目依赖
 			.on('exit', function (code) {
 				if (code) {
 					done(new Error('code:' + code));
